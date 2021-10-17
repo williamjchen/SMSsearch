@@ -1,5 +1,8 @@
 import openai
-openai.api_key = "sk-DaEKLxccdN4Z9fAPpzxVEjytk8qe8gYzXAML8Wtz"
+import google
+from constants import OPEN_AI_KEY
+
+openai.api_key = OPEN_AI_KEY
 
 
 def search(search_term: str):
