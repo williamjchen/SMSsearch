@@ -24,6 +24,7 @@ def search_gpt(search_term: str):
         "When is": ["Under the federal Holidays Act,[15] Canada Day is observed on July 1, unless that date falls on a Sunday, in which case July 2 is the statutory holiday. Celebratory events will generally still take place on July 1, even though it is not the legal holiday.[16] If it falls on a weekend, businesses normally closed that day usually dedicate the following Monday as a day off.[17]", ["When is canada day?", "Canada day is July 1"]],
         "Who is": ["Arnold Schwarzenegger, in full Arnold Alois Schwarzenegger, (born July 30, 1947, Thal, near Graz, Austria), Austrian-born American bodybuilder, film actor, and politician who rose to fame through roles in blockbuster action movies and later served as governor of California (2003–11).", ["Who is Arnold Schwarzenegger", "Arnold Schwarzenegger is an Austrian-born American bodybuilder, film actor, and politician"]],
         "Where is": ["The Guantanamo Bay detention camp (Spanish: Centro de detención de la bahía de Guantánamo) is a United States military prison located within Guantanamo Bay Naval Base, also referred to as Guantánamo, GTMO, and \"Gitmo\" (/ˈɡɪtmoʊ/), on the coast of Guantánamo Bay in Cuba. Of the 780 people detained there since January 2002 when the military prison first opened after the September 11, 2001 attacks, 731 have been transferred elsewhere, 39 remain there, and 9 have died while in custody.[1]", ["Where is guantanamo bay?", "The Guantanamo Bay detention camp is a United States military prison located within Guantanamo Bay Naval Base"]],
+        "Where to": ["Once an election in your electoral district has been called, you will be able to use our Voter Information Service to find your voting information, including when and where to vote. This information will also be on your voter information card, which you will receive in the mail if you are registered to vote.", ["Where to vote", "Once an election in your electoral district has been called, you will be able to find out where to vote."]]
     }
 
     example = examples_list["What is"]
@@ -41,7 +42,7 @@ def search_gpt(search_term: str):
         examples_context=example[0],
         examples=[example[1]],
         max_rerank=10,
-        max_tokens=15,
+        max_tokens=23,
         stop=["\n", "<|endoftext|>"]
     )
     print(result.answers)
