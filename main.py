@@ -1,6 +1,6 @@
 from flask import Flask, request, redirect
 from twilio.twiml.messaging_response import MessagingResponse
-from search import search
+from search import search_gpt
 
 app = Flask(__name__)
 
@@ -13,7 +13,7 @@ def incoming_sms():
     resp = MessagingResponse()
 
     # Determine the right reply for this message
-    resp.message(search(body))
+    resp.message(search_gpt(body))
 
     return str(resp)
 
