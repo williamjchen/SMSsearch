@@ -37,12 +37,13 @@ def search_gpt(search_term: str):
     result = openai.Answer.create(
         search_model="ada",
         model="davinci",
+        #model="curie",
         question=search_term,
         documents=articles[:200],
         examples_context=example[0],
         examples=[example[1]],
         max_rerank=10,
-        max_tokens=23,
+        max_tokens=15,
         stop=["\n", "<|endoftext|>"]
     )
     print(result.answers)
